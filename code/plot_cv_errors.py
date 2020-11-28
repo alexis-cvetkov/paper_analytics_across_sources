@@ -21,10 +21,12 @@ methods = ['matching & averaging', 'fuzzy matching, raw data',
            'embedding & learning, raw data',
            'embedding & learning, manually matched data']
 
+print('SALARY ESTIMATION')
 for method, fname in zip(methods, fnames):
     cv_err = pd.read_csv(dir_name + fname)['cv_error'].to_numpy()
     rsme = np.mean(cv_err**2)**0.5
-    print(method, rsme)
+    print(method, int(round(rsme)))
+print('-'*50)
 
 ### Quantile estimation
 
@@ -36,11 +38,12 @@ methods = ['matching & averaging', 'fuzzy matching, raw data',
            'embedding & learning, raw data',
            'embedding & learning, manually matched data']
 
+print('0.75-QUANTILE ESTIMATION')
 for method, fname in zip(methods, fnames):
     cv_err = pd.read_csv(dir_name + fname)['cv_error'].to_numpy()
     mae = np.mean(cv_err)
-    print(method, mae)
-
+    print(method, int(round(mae)))
+print('-'*50)
     
 ### Propensity estimation
 
@@ -52,7 +55,8 @@ methods = ['matching & averaging', 'fuzzy matching, raw data',
            'embedding & learning, raw data',
            'embedding & learning, manually matched data']
 
+print('PROPENSITY-SCORE ESTIMATION')
 for method, fname in zip(methods, fnames):
     cv_err = pd.read_csv(dir_name + fname)['cv_error'].to_numpy()
     brier_score = np.mean(cv_err**2)
-    print(method, brier_score)
+    print(method, round(brier_score*1000)/1000)

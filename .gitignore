@@ -52,7 +52,6 @@ coverage.xml
 **/fastText_bins
 **/texte
 database_embedding/data
-**/results/cv_errors/**
 **.lprof
 
 # LaTeX temporary files

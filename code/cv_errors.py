@@ -8,11 +8,8 @@ HistGradientBoostingClassifier, GradientBoostingRegressor
 from sklearn.model_selection import GroupShuffleSplit, LeaveOneGroupOut
 from sklearn.base import clone
 from joblib import Parallel, delayed
-
-def warn(*args, **kwargs):
-    pass
 import warnings
-warnings.warn = warn
+warnings.filterwarnings('ignore')
 
 """
 Code to evaluate the estimation errors of matching and learning based
@@ -265,7 +262,7 @@ if __name__ == '__main__':
 
     # Fuzzy matching + manual matching
     X = np.hstack([Xs_cft[:,:300], X_mem])
-    model = FuzzyEstimator(task=task, n_chunks=20, matching=True)
+    model = FuzzyEstimator(task=task, n_chunks=20, matching=False)
     model_name = 'fuzzy_matched'
     cv_err = cv_errors(task, model, X, X_nem, X_mem, y, groups, n_splits, test_size, n_jobs)
     df = pd.DataFrame(np.array([n_var, cv_err]).T, columns=['n_variants', 'cv_error'])

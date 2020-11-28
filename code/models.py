@@ -154,7 +154,6 @@ class FuzzyEstimator(BaseEstimator):
             else:
                 res[k] = cv_err.mean()
         self.threshold = t_list[np.argmin(res)]
-        print(int(sum(n_var == 0)/len(n_var)*100)/100)
         
         if self.matching:
             res2 = np.zeros(len(a_list))
@@ -180,7 +179,6 @@ class FuzzyEstimator(BaseEstimator):
         # Parameter tuning
         if self.threshold == 0:
             self.param_tuning(X1, y1)
-            print(self.threshold)
         # Fit on all train data with tuned params
         X1_ft = X1[:,:300]
         X1 = X1[:,300:]
