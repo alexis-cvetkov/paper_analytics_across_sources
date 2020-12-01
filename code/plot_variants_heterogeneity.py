@@ -43,63 +43,6 @@ variants2 = ['0361 project manager',
 import seaborn as sns
 sns.set()
 
-### First figure
-plt.subplots(dpi=180, figsize=(3,2.8))
-
-plt.subplot(223)
-for v in variants:
-    x, counts, y = results[v]
-    y = np.array(y)
-    mask = (x < 34)
-    if v == 'administrative assistant':
-        plt.plot(x[mask], y[mask], linewidth=2, color='magenta')
-    else:
-        plt.plot(x[mask], y[mask], linewidth=0.8)
-mask = (x_all < 34)
-plt.plot(x_all[mask], np.array(y_all)[mask], linewidth=2, label='empirical average', color='k')
-plt.xlabel('Years of experience', size=8)
-plt.ylim([30000, 60000])
-plt.tick_params(axis='y', which='major', labelsize=8, rotation=90, pad=-5)
-plt.tick_params(axis='x', which='major', labelsize=8, pad=-5)
-plt.yticks([35000, 45000, 55000], ['35k', '45k', '55k'], va='center')
-plt.ylabel('Annual Salary', size=8, labelpad=2)
-plt.xlim([0, 33])
-plt.xticks([0, 10, 20, 30], size=8)
-plt.title('Matching\n& Averaging', size=10)
-
-plt.subplot(224)
-for v in variants:
-    x, y = results2[v]
-    if v == '9020s administrative assistant salary ':
-        v = '9020s administrative\nassistant salary'
-    if v == 'administrative assistant':
-        v = 'administrative\nassistant'
-    if v == 'administrative\nassistant':
-        plt.plot(x, y, label=f'"{v}"', linewidth=2, color='magenta')
-    else:
-        plt.plot(x, y, label=f'"{v}"', linewidth=0.8)
-mask = (x_all < 34)
-plt.plot(x2_all, y2_all, linewidth=2, label='mean estimate', color='k')
-plt.xlabel('Years of experience', size=8)
-plt.ylim([30000, 60000])
-#plt.tick_params(axis='y', which='major', labelsize=8, rotation=90)
-plt.yticks([35000, 45000, 55000], ['']*3, va='center')
-leg = plt.legend(bbox_to_anchor=(-1.28, 1),
-            handlelength=1,
-            ncol=1, fontsize=8, labelspacing=0.3,
-            title='Administrative assistant')
-plt.setp(leg.get_title(),fontsize=9)
-plt.xlim([0, 33])
-plt.xticks([0, 10, 20, 30], size=8)
-plt.tick_params(axis='x', which='major', labelsize=8, pad=-5)
-plt.title('Embedding\n& Learning', size=10)
-
-plt.subplots_adjust(wspace=0.04, hspace=0.05)
-plt.savefig('../latex/figures/variants_dispersion1.pdf',
-            bbox_inches='tight', pad_inches=0.01)
-plt.show()
-
-### Second figure
 plt.subplots(dpi=180, figsize=(3,2.8))
 
 plt.subplot(221)
@@ -113,7 +56,7 @@ for v in variants2:
         plt.plot(x[mask], y[mask], linewidth=0.8)
 mask = (x3_all < 25)
 plt.plot(x3_all[mask], np.array(y3_all)[mask], linewidth=2, label='empirical average', color='k')
-plt.title('Matching & Averaging', size=8, pad=2)
+plt.title('Matching & Averaging   ', size=8, pad=2)
 ax = plt.gca()
 plt.text(0, 1.13, "Classic approach", transform=ax.transAxes, size=10)
 plt.text(-1.3, 1.13, "Query", transform=ax.transAxes, size=10)
@@ -156,7 +99,7 @@ for v in variants2:
         plt.plot(x, y, label=f'"{v}"', linewidth=0.8)
 mask = (x4_all < 25)
 plt.plot(x4_all, y4_all, linewidth=2, label='mean estimate', color='k')
-plt.title('Embedding & Learning', size=8, pad=2)
+plt.title('   Embedding & Learning', size=8, pad=2)
 ax = plt.gca()
 plt.text(0.2, 1.13, "Proposed", transform=ax.transAxes, size=10)
 #plt.tick_params(axis='y', which='major', labelsize=10, rotation=90)
@@ -192,6 +135,6 @@ plt.xticks([0, 10, 20, 30], size=8)
 plt.tick_params(axis='x', which='major', labelsize=8, pad=-5)
 
 plt.subplots_adjust(wspace=0.04, hspace=0.05)
-plt.savefig('../latex/figures/variants_dispersion2.pdf',
+plt.savefig('../latex/figures/variants_dispersion.pdf',
             bbox_inches='tight', pad_inches=0.01)
 plt.show()

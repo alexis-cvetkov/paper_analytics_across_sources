@@ -16,8 +16,8 @@ matching & averaging, fuzzy matching, and embeddings with machine-learning.
 
 def load_data(model, q=0.75):
     p_list = [30, 55, 75, 88, 97, 100]
-    ATE_0 = np.loadtxt(f'ATE_depleted/{model}_0%.csv')[0]
-    ATE_list = [np.loadtxt(f'ATE_depleted/{model}_{p}%.csv')[:,0] for p in p_list]
+    ATE_0 = np.loadtxt(f'../results/ATE_depleted/{model}_0%.csv')[0]
+    ATE_list = [np.loadtxt(f'../results/ATE_depleted/{model}_{p}%.csv')[:,0] for p in p_list]
     x = np.array([0] + p_list)
     y_med, q_sup, q_inf = [ATE_0], [ATE_0], [ATE_0]
     for ATEs in ATE_list:
@@ -30,7 +30,7 @@ def load_data(model, q=0.75):
 
 def load_data_corrupted(model, q=0.75):
     p_list = [0, 30, 55, 75, 88, 97, 100]
-    ATE_list = [np.loadtxt(f'ATE_depleted/{model}_{p}%.csv')[:,0] for p in p_list]
+    ATE_list = [np.loadtxt(f'../results/ATE_depleted/{model}_{p}%.csv')[:,0] for p in p_list]
     ATE_list = [ATEs[~np.isnan(ATEs)] for ATEs in ATE_list]
     y_med = np.array([np.mean(ATEs) for ATEs in ATE_list])
     q_sup = np.array([np.quantile(ATEs, q) for ATEs in ATE_list])

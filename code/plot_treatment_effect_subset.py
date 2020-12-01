@@ -8,33 +8,33 @@ import seaborn as sns
 # ### Average Treatment Effect
 
 # Load data
-DB1_model = np.loadtxt('ATE_subsets/model/1DB_matched=False.csv')[:,0]
-DB1_model_rot = np.loadtxt('ATE_subsets/model/1DB_matched=False_rotated.csv')[:,0]
-DB1_emp_IPW = np.loadtxt('ATE_subsets/empirical/1DB_empirical_IPW_dismiss=False.csv')
-DB1_emp_IPW_dismiss = np.loadtxt('ATE_subsets/empirical/1DB_empirical_IPW_dismiss=True.csv')
-DB1_fuzzy = np.loadtxt('ATE_subsets/fuzzy/1DB.csv')
-DB1_fuzzy_rot = np.loadtxt('ATE_subsets/fuzzy/1DB_rotated.csv')
+DB1_model = np.loadtxt('../results/ATE_subsets/model/1DB_matched=False.csv')[:,0]
+DB1_model_rot = np.loadtxt('../results/ATE_subsets/model/1DB_matched=False_rotated.csv')[:,0]
+DB1_emp_IPW = np.loadtxt('../results/ATE_subsets/empirical/1DB_empirical_IPW_dismiss=False.csv')
+DB1_emp_IPW_dismiss = np.loadtxt('../results/ATE_subsets/empirical/1DB_empirical_IPW_dismiss=True.csv')
+DB1_fuzzy = np.loadtxt('../results/ATE_subsets/fuzzy/1DB.csv')
+DB1_fuzzy_rot = np.loadtxt('../results/ATE_subsets/fuzzy/1DB_rotated.csv')
 
-DB3_model = np.loadtxt('ATE_subsets/model/3DB_matched=False.csv')[:,0]
-DB3_model_rot = np.loadtxt('ATE_subsets/model/3DB_matched=False_rotated.csv')[:,0]
-DB3_emp_IPW = np.loadtxt('ATE_subsets/empirical/3DB_empirical_IPW_dismiss=False.csv')
-DB3_emp_IPW_dismiss = np.loadtxt('ATE_subsets/empirical/3DB_empirical_IPW_dismiss=True.csv')
-DB3_fuzzy = np.loadtxt('ATE_subsets/fuzzy/3DB.csv')
-DB3_fuzzy_rot = np.loadtxt('ATE_subsets/fuzzy/3DB_rotated.csv')
+DB3_model = np.loadtxt('../results/ATE_subsets/model/3DB_matched=False.csv')[:,0]
+DB3_model_rot = np.loadtxt('../results/ATE_subsets/model/3DB_matched=False_rotated.csv')[:,0]
+DB3_emp_IPW = np.loadtxt('../results/ATE_subsets/empirical/3DB_empirical_IPW_dismiss=False.csv')
+DB3_emp_IPW_dismiss = np.loadtxt('../results/ATE_subsets/empirical/3DB_empirical_IPW_dismiss=True.csv')
+DB3_fuzzy = np.loadtxt('../results/ATE_subsets/fuzzy/3DB.csv')
+DB3_fuzzy_rot = np.loadtxt('../results/ATE_subsets/fuzzy/3DB_rotated.csv')
 
-DB7_model = np.loadtxt('ATE_subsets/model/7DB_matched=False.csv')[:,0]
-DB7_model_rot = np.loadtxt('ATE_subsets/model/7DB_matched=False_rotated.csv')[:,0]
-DB7_emp_IPW = np.loadtxt('ATE_subsets/empirical/7DB_empirical_IPW_dismiss=False.csv')
-DB7_emp_IPW_dismiss = np.loadtxt('ATE_subsets/empirical/7DB_empirical_IPW_dismiss=True.csv')
-DB7_fuzzy = np.loadtxt('ATE_subsets/fuzzy/7DB.csv')
-DB7_fuzzy_rot = np.loadtxt('ATE_subsets/fuzzy/7DB_rotated.csv')
+DB7_model = np.loadtxt('../results/ATE_subsets/model/7DB_matched=False.csv')[:,0]
+DB7_model_rot = np.loadtxt('../results/ATE_subsets/model/7DB_matched=False_rotated.csv')[:,0]
+DB7_emp_IPW = np.loadtxt('../results/ATE_subsets/empirical/7DB_empirical_IPW_dismiss=False.csv')
+DB7_emp_IPW_dismiss = np.loadtxt('../results/ATE_subsets/empirical/7DB_empirical_IPW_dismiss=True.csv')
+DB7_fuzzy = np.loadtxt('../results/ATE_subsets/fuzzy/7DB.csv')
+DB7_fuzzy_rot = np.loadtxt('../results/ATE_subsets/fuzzy/7DB_rotated.csv')
 
-DB14_model = np.loadtxt('ATE_subsets/model/14DB_matched=False.csv')[:1]
-DB14_model_rot = np.loadtxt('ATE_subsets/model/14DB_matched=False_rotated.csv')[:1]
-DB14_emp_IPW = np.loadtxt('ATE_subsets/empirical/14DB_empirical_IPW_dismiss=False.csv')
-DB14_emp_IPW_dismiss = np.loadtxt('ATE_subsets/empirical/14DB_empirical_IPW_dismiss=True.csv')
-DB14_fuzzy = np.loadtxt('ATE_subsets/fuzzy/14DB.csv')
-DB14_fuzzy_rot = np.loadtxt('ATE_subsets/fuzzy/14DB_rotated.csv')
+DB14_model = np.loadtxt('../results/ATE_subsets/model/14DB_matched=False.csv')[:1]
+DB14_model_rot = np.loadtxt('../results/ATE_subsets/model/14DB_matched=False_rotated.csv')[:1]
+DB14_emp_IPW = np.loadtxt('../results/ATE_subsets/empirical/14DB_empirical_IPW_dismiss=False.csv')
+DB14_emp_IPW_dismiss = np.loadtxt('../results/ATE_subsets/empirical/14DB_empirical_IPW_dismiss=True.csv')
+DB14_fuzzy = np.loadtxt('../results/ATE_subsets/fuzzy/14DB.csv')
+DB14_fuzzy_rot = np.loadtxt('../results/ATE_subsets/fuzzy/14DB_rotated.csv')
 
 ### Make dataframe
 N = 6
